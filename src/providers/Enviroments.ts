@@ -3,6 +3,7 @@ import Logger from "../libs/Logger";
 const requiredENV = [
     "WEB_PORT",
     "WEB_HOST",
+    "NODE_ENV",
     // "DB_HOST",
     // "DB_PORT",
     // "DB_USER",
@@ -22,6 +23,7 @@ class Environment {
         return {
             WEB_PORT: process.env.WEB_PORT,
             WEB_HOST: process.env.WEB_HOST,
+            NODE_ENV: process.env.NODE_ENV,
             // DB_HOST: process.env.DB_HOST,
             // DB_PORT: process.env.DB_PORT,
             // DB_USER: process.env.DB_USER,
