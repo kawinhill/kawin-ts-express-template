@@ -5,7 +5,8 @@ import API_ERROR from "../libs/API_ERROR";
 
 export default class Authentication {
     public static async authenticate(req: any, res: any, next: any) {
-        const token = req.headers.authorization;
+        let token = req.headers.authorization;
+        token = token.replace('Bearer ', ''); 
         if (!token) {
             return res.status(HTTP_STATUS.UNAUTHORIZED).send(API_ERROR.UNAUTHORIZED);
         }
