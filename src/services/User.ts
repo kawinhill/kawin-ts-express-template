@@ -61,4 +61,26 @@ export default class User {
         });
         return this.getUserByUUID(tokenData.userUuid);
     }
+
+    public static async deleteToken(token: string) {
+        return Prisma.client.token.delete({
+            where: {
+                token: token,
+            },
+        });
+    }
+
+    public static async getUserDetails(uuid: string) {
+        return Prisma.client.user.findUnique({
+            where: {
+                uuid: uuid,
+            },
+            select: {
+                uuid: true,
+                username: true,
+                createdAt: true,
+                updatedAt: true,
+            },
+        });
+    }
 }
