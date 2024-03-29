@@ -1,6 +1,7 @@
 import * as express from "express";
 import Login from "../../controllers/API/public/Login";
 import Register from "../../controllers/API/public/Register";
+import Logout from "../../controllers/API/authenticated/Logout";
 
 const router = express.Router();
 
