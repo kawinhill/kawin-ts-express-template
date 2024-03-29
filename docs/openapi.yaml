@@ -50,6 +50,18 @@ paths:
           description: Unauthorized
         '500':
           description: Internal server error
+  /logout:
+    post:
+      security:
+        - bearerAuth: []
+      summary: User logout
+      responses:
+        '200':
+          description: Successful logout
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
   /register:
     post:
       summary: User registration
