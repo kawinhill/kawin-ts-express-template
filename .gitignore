@@ -50,3 +50,4 @@ logs
 
 # Misc
 .DS_Store
+prisma/db.sqlite
