@@ -10,6 +10,7 @@ NativeException.process();
 App.loadENV();
 App.loadPrisma();
 App.loadExpress();
+App.loadCron();
 
 export default App;
 

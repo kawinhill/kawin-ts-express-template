@@ -2,6 +2,7 @@ import Enviroments from './Enviroments';
 import Prisma from './Prisma';
 import Express from './Express';
 import Logger, { LogLevel } from '../libs/Logger';
+import cron from 'node-cron';
 
 class App {
     public loadENV(): void {
@@ -21,6 +22,13 @@ class App {
         }
         Logger.log(LogLevel.INFO, 'Loading Express');
         Express.init();
+    }
+
+    public loadCron(): void {
+        Logger.log(LogLevel.INFO, 'Loading Cron');
+        // cron.schedule('* * * * *', () => {
+        //     console.log('Cron is running');
+        // });
     }
 
     public endExpress(): void {
