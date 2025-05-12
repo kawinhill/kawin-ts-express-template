@@ -1,4 +1,4 @@
-FROM node:20.11.1 as build
+FROM node:22.15.0 as build
 WORKDIR /app
 
 COPY . .
@@ -9,7 +9,7 @@ RUN pnpm install
 RUN pnpm run build
 
 
-FROM node:20.11.1
+FROM node:22.15.0
 WORKDIR /app
 RUN npm install -g pnpm
 COPY --from=build /app/package.json /app/package.json
